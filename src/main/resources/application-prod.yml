@@ -1,0 +1,15 @@
+spring: 
+  datasource: 
+    url: jdbc:postgresql://postgres_server:5454/postgres
+    username: postgres 
+    password: alienxtrix
+    driver-class-name: org.postgresql.Driver 
+  jpa: 
+    hibernate:
+      ddl-auto: create
+      generate-ddl: true
+  show-sql: true
+    
+     
+    
+    
