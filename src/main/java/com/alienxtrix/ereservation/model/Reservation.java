@@ -20,6 +20,7 @@ import lombok.Data;
 
 /**
  * Class represents reservation table
+ * 
  * @author Josh Fuentes
  *
  */
@@ -28,8 +29,8 @@ import lombok.Data;
 @Table(name = "reservation")
 public class Reservation {
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy="uuid2")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid2")
 	private String idReservation;
 	@Temporal(TemporalType.DATE)
 	private Date dateStart;
@@ -38,9 +39,7 @@ public class Reservation {
 	private int quantityPersons;
 	private String description;
 	@ManyToOne
-	@JoinColumn(name = "idclient")
+	@JoinColumn(name = "idClient")
 	private Client client;
-	
-	
 
 }

@@ -3,6 +3,8 @@
  */
 package com.alienxtrix.ereservation.bussiness.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -65,6 +67,10 @@ public class ClientService {
 	 */
 	public Client findByClientKey(String clientKey) {
 		return this.clientRepository.findByClientKey(clientKey);
+	}
+	
+	public List<Client> findAll(){
+		return this.clientRepository.findAll();		
 	}
 
 }

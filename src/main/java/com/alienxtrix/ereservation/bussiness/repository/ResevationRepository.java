@@ -19,7 +19,7 @@ import com.alienxtrix.ereservation.model.Reservation;
  */
 public interface ResevationRepository extends JpaRepository<Reservation, String> {
 	
-	@Query("Select r from reservation r where r.dateStart =:dateStartRes and r.dateEnd =:dateEndRes")
+	@Query("Select r from Reservation r where r.dateStart =:dateStartRes and r.dateEnd =:dateEndRes")
 	public List<Reservation> find(@Param("dateStartRes") Date dateStartRes, @Param("dateEndRes") Date dateEndRes);
 	
 	

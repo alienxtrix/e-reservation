@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.alienxtrix.ereservation.model;
+package com.alienxtrix.ereservation.view.resources.vo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,34 +21,13 @@ import lombok.Data;
  *
  */
 @Data
-@Entity
-@Table(name = "client")
-@NamedQuery(name = "Client.findByClientKey", query = "Select c from Client c where c.clientKey = ?1")
-public class Client {
-	@Id
-	@GeneratedValue(generator = "system-uuid")
-	@GenericGenerator(name = "system-uuid", strategy = "uuid2")
-	private String idClient;
+public class ClientVO {
 	private String clientName;
 	private String clientLastName;
 	private String clientKey;
 	private String clientAddress;
 	private String clientPhone;
 	private String clientMail;
-	@OneToMany(mappedBy = "client")
-	private java.util.Set<Reservation> reservation;
-
-	public Client() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public String getIdClient() {
-		return idClient;
-	}
-
-	public void setIdClient(String idClient) {
-		this.idClient = idClient;
-	}
 
 	public String getClientName() {
 		return clientName;
@@ -97,14 +76,5 @@ public class Client {
 	public void setClientMail(String clientMail) {
 		this.clientMail = clientMail;
 	}
-
-	public java.util.Set<Reservation> getReservation() {
-		return reservation;
-	}
-
-	public void setReservation(java.util.Set<Reservation> reservation) {
-		this.reservation = reservation;
-	}
-	
 
 }
