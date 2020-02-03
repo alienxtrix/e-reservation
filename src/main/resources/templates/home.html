@@ -1,15 +1,33 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>e-reservation</title>
-<link rel="stylesheet" href="/css/style.css" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+
+	
 </head>
-<body>
-	<div align="center">
-	<h3>E-reservation</h3>
-		<h3>Bienvenidos</h3>
-		<a href="/swagger-ui.html">SWAGGER</a>
-	</div>
+<body background="http://orig11.deviantart.net/20eb/f/2015/030/6/f/_minflat__dark_material_design_wallpaper__4k__by_dakoder-d8fjqzu.jpg">
+<div class="login-page">
+<h3 align="center">E-reservation</h3>
+  <h4 align="center">alienxtrix</h4>
+  <div class="form">
+  
+    <form class="login-form" th:action="@{/api/client}" method="POST">
+      <input type="text"  th:field={*clientName} placeholder="nombre" name="clientName"/>
+      <input type="text" placeholder="apellido" name="clientLastName"/>
+      <input type="text" placeholder="dirección" name="clientAddress"/>
+      <input type="text" placeholder="nickname" name="clientKey"/>
+      <input type="text" placeholder="correo" name="clientMail"/>
+      <button><span>Gurdar</span></button>
+      
+    </form>
+  </div>
+</div>
 </body>
 </html>
